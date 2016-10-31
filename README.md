@@ -29,6 +29,14 @@ Go to [Zuora Test Drive](https://www.zuora.com/resource/zuora-test-drive/) and s
 
 To run, deploy on an APACHE server and navigate to index.html page. Choose a scenario and click Submit. 
 
+### Included Scenarios 
+* Connect to Zuora 
+* Retrieve product catalog 
+* Retrieve specific product 
+* Create account and subscription 
+* Upgrade subscription by adding a new plan 
+* Cancel subscription 
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://rest.zuora.com/v1*
