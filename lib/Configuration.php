@@ -81,14 +81,14 @@ class Configuration
      *
      * @var string
      */
-    protected $username = 'ae@zuoratestdrive.com';
+    protected $username = 'validZuoraUsername@test.com';
 
     /**
      * Password for HTTP basic authentication
      *
      * @var string
      */
-    protected $password = 'ZuoraTestDrive';
+    protected $password = 'Password';
 
     /**
      * The default instance of ApiClient
