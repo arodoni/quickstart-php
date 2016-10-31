@@ -1,0 +1,14 @@
+# GETProductRatePlanChargeTypeFinanceInformation
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**custom_field__c** | **string** | Any custom fields defined for this object. | [optional] 
+**deferred_revenue_accounting_code** | **string** | The accounting code for deferred revenue, such as Monthly Recurring Liability. | [optional] 
+**deferred_revenue_accounting_code_type** | **string** | The type associated with the deferred revenue accounting code, such as Deferred Revenue. | [optional] 
+**recognized_revenue_accounting_code** | **string** | The accounting code for recognized revenue, such as Monthly Recurring Charges or Overage Charges. | [optional] 
+**recognized_revenue_accounting_code_type** | **string** | The type associated with the recognized revenue accounting code, such as Sales Revenue or Sales Discount. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
