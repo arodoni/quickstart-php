@@ -19,7 +19,7 @@ PHP 5.4.0 and later
 
 ### Manual Installation
 
-Download the files and deploy to an apache server. 
+Download the files and deploy to an APACHE server. 
 
 ### Zuora Test Drive
 
@@ -30,7 +30,7 @@ Go to [Zuora Test Drive](https://www.zuora.com/resource/zuora-test-drive/) and s
 
 ## Getting Started
 
-To run, deploy on an APACHE server and navigate to index.html page. Choose a scenario and click Submit. 
+To run, update the credentials in [Configuration.php](/lib/Configuration.php), deploy the files on an APACHE server and navigate to index.html page. Choose a scenario and click Submit. 
 
 ### Included Scenarios 
 * Connect to Zuora 
