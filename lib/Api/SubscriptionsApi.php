@@ -112,7 +112,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\GETSubscriptionTypeWithSuccess
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETOneSubscription($subscription_key, $charge_detail = null)
+    public function getOneSubscription($subscription_key, $charge_detail = null)
     {
         list($response) = $this->gETOneSubscriptionWithHttpInfo($subscription_key, $charge_detail);
         return $response;
@@ -128,7 +128,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\GETSubscriptionTypeWithSuccess, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETOneSubscriptionWithHttpInfo($subscription_key, $charge_detail = null)
+    public function getOneSubscriptionWithHttpInfo($subscription_key, $charge_detail = null)
     {
         // verify the required parameter 'subscription_key' is set
         if ($subscription_key === null) {
@@ -203,7 +203,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\GETSubscriptionWrapper
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETSubscription($account_key, $charge_detail = null)
+    public function getSubscription($account_key, $charge_detail = null)
     {
         list($response) = $this->gETSubscriptionWithHttpInfo($account_key, $charge_detail);
         return $response;
@@ -219,7 +219,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\GETSubscriptionWrapper, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETSubscriptionWithHttpInfo($account_key, $charge_detail = null)
+    public function getSubscriptionWithHttpInfo($account_key, $charge_detail = null)
     {
         // verify the required parameter 'account_key' is set
         if ($account_key === null) {
@@ -294,7 +294,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\POSTSubscriptionResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTSubscription($request, $zuora_version = null)
+    public function postSubscription($request, $zuora_version = null)
     {
         list($response) = $this->pOSTSubscriptionWithHttpInfo($request, $zuora_version);
         return $response;
@@ -310,7 +310,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\POSTSubscriptionResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTSubscriptionWithHttpInfo($request, $zuora_version = null)
+    public function postSubscriptionWithHttpInfo($request, $zuora_version = null)
     {
         // verify the required parameter 'request' is set
         if ($request === null) {
@@ -383,7 +383,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\POSTSubscriptionCancellationResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTSubscriptionCancellation($subscription_key, $request, $zuora_version = null)
+    public function postSubscriptionCancellation($subscription_key, $request, $zuora_version = null)
     {
         list($response) = $this->pOSTSubscriptionCancellationWithHttpInfo($subscription_key, $request, $zuora_version);
         return $response;
@@ -400,7 +400,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\POSTSubscriptionCancellationResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTSubscriptionCancellationWithHttpInfo($subscription_key, $request, $zuora_version = null)
+    public function postSubscriptionCancellationWithHttpInfo($subscription_key, $request, $zuora_version = null)
     {
         // verify the required parameter 'subscription_key' is set
         if ($subscription_key === null) {
@@ -486,7 +486,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\POSTSubscriptionPreviewResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTSubscriptionPreview($request)
+    public function postSubscriptionPreview($request)
     {
         list($response) = $this->pOSTSubscriptionPreviewWithHttpInfo($request);
         return $response;
@@ -501,7 +501,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\POSTSubscriptionPreviewResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTSubscriptionPreviewWithHttpInfo($request)
+    public function postSubscriptionPreviewWithHttpInfo($request)
     {
         // verify the required parameter 'request' is set
         if ($request === null) {
@@ -570,7 +570,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\PUTRenewSubscriptionResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTRenewSubscription($subscription_key, $request, $zuora_version = null)
+    public function putRenewSubscription($subscription_key, $request, $zuora_version = null)
     {
         list($response) = $this->pUTRenewSubscriptionWithHttpInfo($subscription_key, $request, $zuora_version);
         return $response;
@@ -587,7 +587,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\PUTRenewSubscriptionResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTRenewSubscriptionWithHttpInfo($subscription_key, $request, $zuora_version = null)
+    public function putRenewSubscriptionWithHttpInfo($subscription_key, $request, $zuora_version = null)
     {
         // verify the required parameter 'subscription_key' is set
         if ($subscription_key === null) {
@@ -672,7 +672,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\PUTSubscriptionResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTSubscription($subscription_key, $request, $zuora_version = null)
+    public function putSubscription($subscription_key, $request, $zuora_version = null)
     {
         list($response) = $this->pUTSubscriptionWithHttpInfo($subscription_key, $request, $zuora_version); 
         error_log('PUT Subscription Response: '.$response); 
@@ -690,7 +690,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\PUTSubscriptionResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTSubscriptionWithHttpInfo($subscription_key, $request, $zuora_version = null)
+    public function putSubscriptionWithHttpInfo($subscription_key, $request, $zuora_version = null)
     {
         // verify the required parameter 'subscription_key' is set
         if ($subscription_key === null) {
@@ -778,7 +778,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\PUTSubscriptionResumeResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTSubscriptionResume($subscription_key, $request, $zuora_version = null)
+    public function putSubscriptionResume($subscription_key, $request, $zuora_version = null)
     {
         list($response) = $this->pUTSubscriptionResumeWithHttpInfo($subscription_key, $request, $zuora_version);
         return $response;
@@ -795,7 +795,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\PUTSubscriptionResumeResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTSubscriptionResumeWithHttpInfo($subscription_key, $request, $zuora_version = null)
+    public function putSubscriptionResumeWithHttpInfo($subscription_key, $request, $zuora_version = null)
     {
         // verify the required parameter 'subscription_key' is set
         if ($subscription_key === null) {
@@ -880,7 +880,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\PUTSubscriptionSuspendResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTSubscriptionSuspend($subscription_key, $request, $zuora_version = null)
+    public function putSubscriptionSuspend($subscription_key, $request, $zuora_version = null)
     {
         list($response) = $this->pUTSubscriptionSuspendWithHttpInfo($subscription_key, $request, $zuora_version);
         return $response;
@@ -897,7 +897,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\PUTSubscriptionSuspendResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTSubscriptionSuspendWithHttpInfo($subscription_key, $request, $zuora_version = null)
+    public function putSubscriptionSuspendWithHttpInfo($subscription_key, $request, $zuora_version = null)
     {
         // verify the required parameter 'subscription_key' is set
         if ($subscription_key === null) {
@@ -980,7 +980,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\ProxyDeleteResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyDELETESubscription($id)
+    public function proxyDeleteSubscription($id)
     {
         list($response) = $this->proxyDELETESubscriptionWithHttpInfo($id);
         return $response;
@@ -995,7 +995,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\ProxyDeleteResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyDELETESubscriptionWithHttpInfo($id)
+    public function proxyDeleteSubscriptionWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -1066,7 +1066,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\ProxyGetSubscription
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyGETSubscription($id, $fields = null)
+    public function proxyGetSubscription($id, $fields = null)
     {
         list($response) = $this->proxyGETSubscriptionWithHttpInfo($id, $fields);
         return $response;
@@ -1082,7 +1082,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\ProxyGetSubscription, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyGETSubscriptionWithHttpInfo($id, $fields = null)
+    public function proxyGetSubscriptionWithHttpInfo($id, $fields = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -1160,7 +1160,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\ProxyCreateOrModifyResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPOSTSubscription($create_request)
+    public function proxyPostSubscription($create_request)
     {
         list($response) = $this->proxyPOSTSubscriptionWithHttpInfo($create_request);
         return $response;
@@ -1175,7 +1175,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\ProxyCreateOrModifyResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPOSTSubscriptionWithHttpInfo($create_request)
+    public function proxyPostSubscriptionWithHttpInfo($create_request)
     {
         // verify the required parameter 'create_request' is set
         if ($create_request === null) {
@@ -1247,7 +1247,7 @@ class SubscriptionsApi
      * @return \Swagger\Client\Model\ProxyCreateOrModifyResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPUTSubscription($id, $modify_request)
+    public function proxyPutSubscription($id, $modify_request)
     {
         list($response) = $this->proxyPUTSubscriptionWithHttpInfo($id, $modify_request);
         return $response;
@@ -1263,7 +1263,7 @@ class SubscriptionsApi
      * @return Array of \Swagger\Client\Model\ProxyCreateOrModifyResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPUTSubscriptionWithHttpInfo($id, $modify_request)
+    public function proxyPutSubscriptionWithHttpInfo($id, $modify_request)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {

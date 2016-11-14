@@ -111,7 +111,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\GETAccountType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETAccount($account_key)
+    public function getAccount($account_key)
     {
         list($response) = $this->gETAccountWithHttpInfo($account_key);
         return $response;
@@ -126,7 +126,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\GETAccountType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETAccountWithHttpInfo($account_key)
+    public function getAccountWithHttpInfo($account_key)
     {
         // verify the required parameter 'account_key' is set
         if ($account_key === null) {
@@ -196,7 +196,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\GETAccountSummaryType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETAccountSummary($account_key)
+    public function getAccountSummary($account_key)
     {
         list($response) = $this->gETAccountSummaryWithHttpInfo($account_key);
         return $response;
@@ -211,7 +211,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\GETAccountSummaryType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETAccountSummaryWithHttpInfo($account_key)
+    public function getAccountSummaryWithHttpInfo($account_key)
     {
         // verify the required parameter 'account_key' is set
         if ($account_key === null) {
@@ -282,7 +282,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\POSTAccountResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTAccount($request, $zuora_version = null)
+    public function postAccount($request, $zuora_version = null)
     {
         list($response) = $this->pOSTAccountWithHttpInfo($request, $zuora_version); 
         error_log('POST Account Response: '.$response); 
@@ -299,7 +299,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\POSTAccountResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTAccountWithHttpInfo($request, $zuora_version = null)
+    public function postAccountWithHttpInfo($request, $zuora_version = null)
     {
         // verify the required parameter 'request' is set
         if ($request === null) {
@@ -316,9 +316,6 @@ class AccountsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json')); 
-        // Add credentials to headers
-        $headerParams['apiAccessKeyId'] = $this->apiClient->getSerializer()->toHeaderValue($this->apiClient->getConfig()->getUserName()); 
-        $headerParams['apiSecretAccessKey'] = $this->apiClient->getSerializer()->toHeaderValue($this->apiClient->getConfig()->getPassword()); 
 
         // header params
         if ($zuora_version !== null) {
@@ -374,7 +371,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\CommonResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTAccount($account_key, $request)
+    public function putAccount($account_key, $request)
     {
         list($response) = $this->pUTAccountWithHttpInfo($account_key, $request);
         return $response;
@@ -390,7 +387,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\CommonResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pUTAccountWithHttpInfo($account_key, $request)
+    public function putAccountWithHttpInfo($account_key, $request)
     {
         // verify the required parameter 'account_key' is set
         if ($account_key === null) {
@@ -469,7 +466,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\ProxyDeleteResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyDELETEAccount($id)
+    public function proxyDeleteAccount($id)
     {
         list($response) = $this->proxyDELETEAccountWithHttpInfo($id);
         return $response;
@@ -484,7 +481,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\ProxyDeleteResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyDELETEAccountWithHttpInfo($id)
+    public function proxyDeleteAccountWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -555,7 +552,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\ProxyGetAccount
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyGETAccount($id, $fields = null)
+    public function proxyGetAccount($id, $fields = null)
     {
         list($response) = $this->proxyGETAccountWithHttpInfo($id, $fields);
         return $response;
@@ -571,7 +568,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\ProxyGetAccount, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyGETAccountWithHttpInfo($id, $fields = null)
+    public function proxyGetAccountWithHttpInfo($id, $fields = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -649,7 +646,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\ProxyCreateOrModifyResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPOSTAccount($create_request)
+    public function proxyPostAccount($create_request)
     {
         list($response) = $this->proxyPOSTAccountWithHttpInfo($create_request);
         return $response;
@@ -664,7 +661,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\ProxyCreateOrModifyResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPOSTAccountWithHttpInfo($create_request)
+    public function proxyPostAccountWithHttpInfo($create_request)
     {
         // verify the required parameter 'create_request' is set
         if ($create_request === null) {
@@ -736,7 +733,7 @@ class AccountsApi
      * @return \Swagger\Client\Model\ProxyCreateOrModifyResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPUTAccount($id, $modify_request)
+    public function proxyPutAccount($id, $modify_request)
     {
         list($response) = $this->proxyPUTAccountWithHttpInfo($id, $modify_request);
         return $response;
@@ -752,7 +749,7 @@ class AccountsApi
      * @return Array of \Swagger\Client\Model\ProxyCreateOrModifyResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPUTAccountWithHttpInfo($id, $modify_request)
+    public function proxyPutAccountWithHttpInfo($id, $modify_request)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {

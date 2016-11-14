@@ -113,9 +113,9 @@ class ConnectionsApi
      * @return \Swagger\Client\Model\CommonResponseType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTConnections($api_access_key_id, $api_secret_access_key, $content_type)
+    public function postConnections($api_access_key_id, $api_secret_access_key, $content_type)
     {
-        list($response) = $this->pOSTConnectionsWithHttpInfo($api_access_key_id, $api_secret_access_key, $content_type); 
+        list($response) = $this->postConnectionsWithHttpInfo($api_access_key_id, $api_secret_access_key, $content_type); 
         error_log('Post Connections Response: '.$response); 
         return $response; 
     }
@@ -131,7 +131,7 @@ class ConnectionsApi
      * @return Array of \Swagger\Client\Model\CommonResponseType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function pOSTConnectionsWithHttpInfo($api_access_key_id, $api_secret_access_key, $content_type)
+    public function postConnectionsWithHttpInfo($api_access_key_id, $api_secret_access_key, $content_type)
     {
         // verify the required parameter 'api_access_key_id' is set
         if ($api_access_key_id === null) {

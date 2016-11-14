@@ -66,6 +66,11 @@ if ($testCancelSub) {
 
 $testNum = 1; 
 $startTime; 
+$config = new Swagger\Client\Configuration(); 
+$config->setSSLVerification(false); 
+$config->addDefaultHeader('apiAccessKeyId', $config->getUserName()); 
+$config->addDefaultHeader('apiSecretAccessKey', $config->getPassword()); 
+$newApiClient = new Swagger\Client\ApiClient($config); 
 
 function printResultStart($func){
   global $testNum, $startTime; 
@@ -109,12 +114,10 @@ function printResultEnd($messages){
 function test_zApi_Login(){
   printResultStart(__FUNCTION__);
   $messages = array(); 
-  $config = new Swagger\Client\Configuration(); 
-  $config->setSSLVerification(false); 
-  $newApiClient = new Swagger\Client\ApiClient($config); 
+  global $config, $newApiClient; 
   $conApi = new Swagger\Client\Api\ConnectionsApi($newApiClient); 
   try {
-    $response = $conApi->pOSTConnections($config->getUserName(), 
+    $response = $conApi->postConnections($config->getUserName(), 
       $config->getPassword(), 'application/json'); 
     echo 'Response: <br>'; 
     echo $response; 
@@ -128,9 +131,7 @@ function test_zApi_Login(){
 function test_zApi_GetProductCatalog() {
   printResultStart(__FUNCTION__);
   $messages = array(); 
-  $config = new Swagger\Client\Configuration(); 
-  $config->setSSLVerification(false); 
-  $newApiClient = new Swagger\Client\ApiClient($config); 
+  global $config, $newApiClient; 
   $catApi = new Swagger\Client\Api\CatalogApi($newApiClient); 
   try {
     $response = $catApi->getCatalog(); 
@@ -155,12 +156,10 @@ function test_zApi_GetSpecificProduct() {
     printResultEnd($messages); 
     return; 
   }
-  $config = new Swagger\Client\Configuration(); 
-  $config->setSSLVerification(false); 
-  $newApiClient = new Swagger\Client\ApiClient($config); 
+  global $config, $newApiClient; 
   $prodApi = new Swagger\Client\Api\ProductsApi($newApiClient); 
   try {
-    $response = $prodApi->proxyGETProduct($prodId); 
+    $response = $prodApi->proxyGetProduct($prodId); 
     echo 'Response: <br>'; 
     echo $response; 
     echo '<br>'; 
@@ -183,7 +182,7 @@ function test_zApi_PostAccount() {
     return; 
   }
   $jsonRequest = '{
-    "name": "Test Account WKN REST SWAGGER",
+    "name": "Test Account WKN REST SWAGGER 2",
     "currency": "USD",
     "notes": "This account is for demo purposes.",
     "billCycleDay": 0,
@@ -235,15 +234,13 @@ function test_zApi_PostAccount() {
    }'; 
 
   $zuora_version = '196.0'; 
-  $config = new Swagger\Client\Configuration(); 
-  $config->setSSLVerification(false); 
-  $newApiClient = new Swagger\Client\ApiClient($config); 
+  global $config, $newApiClient; 
   $jsonRequestDecode = json_decode($jsonRequest); 
   $request = $newApiClient->getSerializer()->deserialize($jsonRequestDecode, '\Swagger\Client\Model\POSTAccountType'); 
   error_log('request: '.$request); 
   $accApi = new Swagger\Client\Api\AccountsApi($newApiClient); 
   try {
-    $response = $accApi->pOSTAccount($request, $zuora_version); 
+    $response = $accApi->postAccount($request, $zuora_version); 
     echo 'Response: <br>'; 
     echo $response; 
     echo '<br>'; 
@@ -282,15 +279,13 @@ function test_zApi_UpdateSub() {
     "collect": "false"
   }'; 
   $zuora_version = '196.0'; 
-  $config = new Swagger\Client\Configuration(); 
-  $config->setSSLVerification(false); 
-  $newApiClient = new Swagger\Client\ApiClient($config); 
+  global $config, $newApiClient; 
   $jsonRequestDecode = json_decode($jsonRequest); 
   $request = $newApiClient->getSerializer()->deserialize($jsonRequestDecode, '\Swagger\Client\Model\PUTSubscriptionType'); 
   error_log('request: '.$request); 
   $subApi = new Swagger\Client\Api\SubscriptionsApi($newApiClient); 
   try {
-    $response = $subApi->pUTSubscription($subscription_key, $request, $zuora_version); 
+    $response = $subApi->putSubscription($subscription_key, $request, $zuora_version); 
     echo 'Response: <br>'; 
     echo $response; 
     echo '<br>'; 
@@ -319,15 +314,13 @@ function test_zApi_CancelSub() {
     "collect": "false"
   }'; 
   $zuora_version = '196.0'; 
-  $config = new Swagger\Client\Configuration(); 
-  $config->setSSLVerification(false); 
-  $newApiClient = new Swagger\Client\ApiClient($config); 
+  global $config, $newApiClient; 
   $jsonRequestDecode = json_decode($jsonRequest); 
   $request = $newApiClient->getSerializer()->deserialize($jsonRequestDecode, '\Swagger\Client\Model\POSTSubscriptionCancellationType'); 
   error_log('request: '.$request); 
   $canApi = new Swagger\Client\Api\SubscriptionsApi($newApiClient); 
   try {
-    $response = $canApi->pOSTSubscriptionCancellation($subscription_key, $request, $zuora_version); 
+    $response = $canApi->postSubscriptionCancellation($subscription_key, $request, $zuora_version); 
     echo 'Response: <br>'; 
     echo $response; 
     echo '<br>'; 

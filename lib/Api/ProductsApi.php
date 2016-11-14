@@ -111,9 +111,9 @@ class ProductsApi
      * @return \Swagger\Client\Model\ProxyDeleteResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyDELETEProduct($id)
+    public function proxyDeleteProduct($id)
     {
-        list($response) = $this->proxyDELETEProductWithHttpInfo($id);
+        list($response) = $this->proxyDeleteProductWithHttpInfo($id);
         return $response;
     }
 
@@ -126,7 +126,7 @@ class ProductsApi
      * @return Array of \Swagger\Client\Model\ProxyDeleteResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyDELETEProductWithHttpInfo($id)
+    public function proxyDeleteProductWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -197,7 +197,7 @@ class ProductsApi
      * @return \Swagger\Client\Model\ProxyGetProduct
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyGETProduct($id, $fields = null)
+    public function proxyGetProduct($id, $fields = null)
     {
         list($response) = $this->proxyGETProductWithHttpInfo($id, $fields); 
         error_log('Get Product Response: '.$response); 
@@ -214,11 +214,11 @@ class ProductsApi
      * @return Array of \Swagger\Client\Model\ProxyGetProduct, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyGETProductWithHttpInfo($id, $fields = null)
+    public function proxyGetProductWithHttpInfo($id, $fields = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling proxyGETProduct');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling proxyGetProduct');
         }
         // parse inputs
         $resourcePath = "/object/product/{id}";
@@ -231,9 +231,6 @@ class ProductsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json')); 
-        // Add credentials to headers
-        $headerParams['apiAccessKeyId'] = $this->apiClient->getSerializer()->toHeaderValue($this->apiClient->getConfig()->getUserName()); 
-        $headerParams['apiSecretAccessKey'] = $this->apiClient->getSerializer()->toHeaderValue($this->apiClient->getConfig()->getPassword()); 
 
         // query params
         if ($fields !== null) {
@@ -295,7 +292,7 @@ class ProductsApi
      * @return \Swagger\Client\Model\ProxyCreateOrModifyResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPOSTProduct($create_request)
+    public function proxyPostProduct($create_request)
     {
         list($response) = $this->proxyPOSTProductWithHttpInfo($create_request);
         return $response;
@@ -310,7 +307,7 @@ class ProductsApi
      * @return Array of \Swagger\Client\Model\ProxyCreateOrModifyResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPOSTProductWithHttpInfo($create_request)
+    public function proxyPostProductWithHttpInfo($create_request)
     {
         // verify the required parameter 'create_request' is set
         if ($create_request === null) {
@@ -382,7 +379,7 @@ class ProductsApi
      * @return \Swagger\Client\Model\ProxyCreateOrModifyResponse
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPUTProduct($id, $modify_request)
+    public function proxyPutProduct($id, $modify_request)
     {
         list($response) = $this->proxyPUTProductWithHttpInfo($id, $modify_request);
         return $response;
@@ -398,7 +395,7 @@ class ProductsApi
      * @return Array of \Swagger\Client\Model\ProxyCreateOrModifyResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function proxyPUTProductWithHttpInfo($id, $modify_request)
+    public function proxyPutProductWithHttpInfo($id, $modify_request)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {

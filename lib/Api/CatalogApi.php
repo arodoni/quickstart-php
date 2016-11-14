@@ -110,7 +110,7 @@ class CatalogApi
      * @return \Swagger\Client\Model\GETCatalogType
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETCatalog()
+    public function getCatalog()
     {
         list($response) = $this->gETCatalogWithHttpInfo(); 
         error_log('Get Catalog Response: '.$response); 
@@ -125,7 +125,7 @@ class CatalogApi
      * @return Array of \Swagger\Client\Model\GETCatalogType, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function gETCatalogWithHttpInfo()
+    public function getCatalogWithHttpInfo()
     {
         // parse inputs
         $resourcePath = "/catalog/products";
@@ -138,9 +138,6 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('application/json')); 
-        // Add credentials to headers
-        $headerParams['apiAccessKeyId'] = $this->apiClient->getSerializer()->toHeaderValue($this->apiClient->getConfig()->getUserName()); 
-        $headerParams['apiSecretAccessKey'] = $this->apiClient->getSerializer()->toHeaderValue($this->apiClient->getConfig()->getPassword()); 
 
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
