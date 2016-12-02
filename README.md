@@ -20,7 +20,9 @@ The API calls used in this example are shown in cURL in [Zuora Developer Quick S
 To build and execute the sample code, you need the following:
 
 - Zuora Test Drive Tenant
+  
   The Test Drive tenant comes with seed data, such as a sample product catalog, which will be used in the sample code. Go to Zuora Test Drive and sign up for a tenant.
+
 - PHP 5.4.0 and later
 
 ## Installation & Execution
@@ -28,9 +30,11 @@ To build and execute the sample code, you need the following:
 The QuickStart project contains the following major components:
 
 - io.swagger.codegen.languages.PhpClientCodegen
+
 This file contains the the Zuora REST client libraries in PHP.
 
 - test.php
+
 This is the class with the QuickStart sample code that uses the Zuora REST API.
 
 - index.html
